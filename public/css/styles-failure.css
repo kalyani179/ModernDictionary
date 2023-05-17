@@ -1,0 +1,112 @@
+body {
+    background-color: #FDF4F5;
+}
+
+.sign-up-success-bg {
+    background-color: #F4FDFF;
+}
+
+.dict-img {
+    height: 280px;
+    width: 280px;
+}
+
+.check-img {
+    height: 130px;
+    width: 130px;
+    margin-top: 6%;
+    margin-bottom: 4%;
+}
+
+.img-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 6%;
+}
+
+.gif {
+    height: 70px;
+    width: 70px;
+    position: relative;
+}
+
+.text {
+    display: inline;
+}
+
+.buttons {
+    display: block;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-left: 1%;
+}
+
+.try,
+.home {
+    padding-right: 1%;
+}
+
+.btn {
+    box-shadow: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Cabin', sans-serif; */
+    transition: 0.2s all ease-in-out;
+}
+
+.try:hover,
+.home:hover {
+    box-shadow: 0 1rem 1rem -0.7rem #666;
+    transform: scale(1.05);
+}
+
+.try:active,
+.home:active {
+    box-shadow: 0 1rem 1rem -0.7rem #666;
+    transform: translateY(5px);
+}
+
+.game-msg {
+    margin-top: 20%;
+}
+
+@media (max-width:500px) {
+    .game-show-words {
+        margin-top: 250px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .btn {
+        font-size: 13px;
+        margin-right: 3px;
+        margin-left: 3px;
+        margin-top: 20px;
+    }
+    h4 {
+        padding-top: 40px;
+        font-size: 18px;
+    }
+    .gif {
+        height: 40px;
+        width: 40px;
+    }
+    .dict-img {
+        margin-top: 50px;
+        height: 250px;
+        width: 250px;
+    }
+    .check-img {
+        margin-top: 100px;
+        height: 100px;
+        width: 100px;
+    }
+}

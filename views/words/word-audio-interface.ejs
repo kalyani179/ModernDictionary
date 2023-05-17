@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=word%>
+    </title>
+    <link rel="icon" href="../images/encyclopedia.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,600&family=Roboto+Slab:wght@800&family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/word-interface.css">
+</head>
+
+<body>
+    <h1>
+        <strong><%=word%></strong>
+    </h1>
+
+
+    <div class="button-word-interface">
+        <button class="btn"><a class="word-link" href="/search-word/word-definitions">Get Definitions for <strong style="text-transform: capitalize;"><%=word%></strong></a></button>
+        <button class="btn"><a class="word-link" href="/search-word/word-examples"> Get Examples for <strong style="text-transform: capitalize;"><%=word%></strong></a></button>
+        <button class="btn"><a class="word-link" href="/search-word/word-related-words">Get Related Words for <strong style="text-transform: capitalize;"><%=word%></strong></a> </button>
+    </div>
+
+
+</body>
+
+</html>

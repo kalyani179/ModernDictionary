@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+.forms {
+    margin-top: 5%;
+    width: 30%;
+}
+
+.form-control {
+    margin-top: 2%;
+    margin-bottom: 6%;
+}
+
+.btn {
+    margin-top: 3%;
+    margin-left: 40%;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    transition: 0.2s all ease-in-out;
+}
+
+.btn:hover {
+    box-shadow: 0 1rem 1rem -0.7rem black;
+    transform: scale(1.05);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20%;
+    height: 220px;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 4%;
+    padding-right: 2.5%;
+}
+
+.image {
+    padding-top: 6%;
+    padding-left: 15%;
+}
+
+label {
+    letter-spacing: 0.5px;
+    padding-bottom: 1%;
+}
+
+@media (max-width:500px) {
+    body {
+        width: 400px;
+        margin-top: 50px;
+        margin-right: 0;
+    }
+    h1 {
+        display: absolute;
+        font-size: 15px;
+        padding-right: 0;
+        margin-left: 0;
+        padding-left: 20px;
+    }
+    .contact-form {
+        flex-wrap: nowrap;
+        font-size: 9px;
+        padding: 0;
+        width: 250px;
+        margin: 0;
+        padding-left: 90px;
+        padding-top: 30px;
+    }
+    input[type=text],
+    input[type=email],
+    #exampleFormControlTextarea1 {
+        font-size: 10px;
+    }
+    .image {
+        display: none;
+    }
+    .forms {
+        width: 230px;
+        padding-left: 0;
+        margin-right: 0;
+    }
+    .btn {
+        font-size: 10px;
+    }
+}

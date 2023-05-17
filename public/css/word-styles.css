@@ -1,0 +1,123 @@
+/* body {
+    background-color: #E5BEEC;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap');
+.word-bg {
+    background-image: url("25101.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.word-of-the-day {
+    /* background-image: linear-gradient(to left, #F5F7FA, #B8C6DB); */
+    /* background-image: linear-gradient(to right, #cdcdcd, white); */
+    /* background-color: #FFFAF4; */
+    background-color: #F4FDFF;
+}
+
+.container-fluid {
+    padding-top: 4%;
+    padding-left: 10%;
+    padding-right: 5%;
+    line-height: 2em;
+}
+
+p {
+    display: inline;
+    margin-right: 1%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h5 {
+    display: inline;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    padding-top: 7%;
+    padding-left: 10%;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+    padding-bottom: 3%;
+    padding-top: 2%;
+    font-family: 'Merriweather', serif;
+    color: #28313B;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+strong {
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+}
+
+.examples {
+    list-style-type: square;
+}
+
+.date {
+    height: 240px;
+    width: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80%;
+    position: absolute;
+    box-shadow: 0 1rem 1rem -0.7rem #666;
+    color: white;
+    /* box-shadow: inset 0 0 1rem 1rem rgba(0, 0, 0, 0.2); */
+    /* background-image: linear-gradient(to right, #B02E0C, #EB4511); */
+    background-image: linear-gradient(to left, #28313B, #485461);
+    /* background-color: #000; */
+}
+
+.related-words-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+    height: 130px;
+}
+
+@media (max-width:500px) {
+    .word-bg {
+        background-image: none;
+        background-color: #f3efeb;
+    }
+    h2 {
+        font-size: medium;
+    }
+    .date {
+        height: 130px;
+        width: 85px;
+        margin-left: 280px;
+    }
+    h5 {
+        font-size: 15px;
+    }
+    h3 {
+        font-size: 17px;
+    }
+    h1 {
+        padding-top: 50px;
+        font-size: 22px;
+        padding-bottom: 20px;
+    }
+    .container-fluid {
+        line-height: 1.5em;
+    }
+}

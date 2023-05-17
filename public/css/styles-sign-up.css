@@ -1,0 +1,84 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #cdcdcd;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+img {
+    border-radius: 10%;
+    margin-bottom: 30px;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.math-time {
+    margin-top: 10px;
+}
+
+label {
+    margin: 0;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+}
+
+.sign-up-btn {
+    width: 20%;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    background-color: #F4FDFF;
+}
+
+@media (max-width:500px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+    .form-signin {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    body {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
