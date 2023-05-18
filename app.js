@@ -96,7 +96,8 @@ app.get("/search-word", function(req, res) {
 
 
 app.post("/search-word/word", function(req, res) {
-    word = req.body.word;
+    let words = req.body.word;
+    word = words.toLowerCase();
     res.redirect("/search-word/word-audio-interface");
 })
 app.get("/search-word/word-audio-interface", function(req, res) {
