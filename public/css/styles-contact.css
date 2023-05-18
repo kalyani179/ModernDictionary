@@ -79,7 +79,7 @@ label {
         padding-right: 0;
         margin-left: 0;
         padding-top: 50px;
-        padding-left: 45px;
+        padding-left: 20px;
     }
     .contact-form {
         flex-wrap: nowrap;
@@ -87,7 +87,7 @@ label {
         padding: 0;
         width: 300px;
         margin: 0;
-        padding-left: 90px;
+        padding-left: 70px;
         padding-top: 50px;
     }
     input[type=text],
