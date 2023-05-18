@@ -86,16 +86,13 @@ a {
 } */
 
 @media (max-width:500px) {
-    .footer {
-        position: relative;
-        margin-top: 250px;
-    }
     h6 {
         padding-top: 40px;
         font-size: 10px;
     }
     .btn {
         width: 350px;
+        font-size: 15px;
     }
     .nav-link {
         font-family: 'Roboto', sans-serif;
