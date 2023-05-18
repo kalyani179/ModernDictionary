@@ -39,13 +39,13 @@ h1 {
 
 @media (max-width:500px) {
     body {
-        margin-top: 130px;
+        margin-top: 150px;
     }
     h1 {
         font-size: 40px;
     }
     .button-word-interface {
-        margin-top: 1px;
+        padding-top: 10px;
     }
     .btn {
         font-size: 17px;
