@@ -90,6 +90,9 @@ a {
         padding-top: 40px;
         font-size: 10px;
     }
+     .buttons {
+        padding-top: 50px;
+    }
     .btn {
         width: 350px;
         font-size: 15px;
