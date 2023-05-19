@@ -81,6 +81,7 @@ app.post("/query-mail", (req, res) => {
     });
     var mailOptions = {
         from: email,
+        replyTo: email,
         to: "dantulurikalyani999@gmail.com",
         subject: userName + " sent you a message",
         text: query
