@@ -96,7 +96,7 @@ strong {
 @media (max-width:500px) {
     .word-bg {
         background-image: none;
-        background-color: #f3efeb;
+        background-color: #fff;
     }
     h2 {
         font-size: medium;
@@ -114,10 +114,17 @@ strong {
     }
     h1 {
         padding-top: 50px;
-        font-size: 22px;
+        font-size: 26px;
         padding-bottom: 20px;
     }
     .container-fluid {
         line-height: 1.5em;
+    }
+    .related-words-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 5px;
+        height: 150px;
     }
 }
