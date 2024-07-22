@@ -91,6 +91,7 @@ app.post("/query-mail", function(req,res) {
     })
 
 });
+
 app.get("/search-word", function(req, res) {
     res.sendFile(__dirname + "/search-word.html");
 })
