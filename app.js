@@ -67,7 +67,7 @@ app.post("/sign-up-success", function(req, res) {
 app.post("/sign-up-failure", function(req, res) {
     res.redirect("/sign-up");
 })
-app.post("/query-mail", (req, res) => {
+app.post("/query-mail", function(req,res) {
     const userName = req.body.userName;
     const email = req.body.email;
     const query = req.body.query;

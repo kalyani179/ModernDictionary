@@ -120,11 +120,4 @@ strong {
     .container-fluid {
         line-height: 1.5em;
     }
-    .related-words-container {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 5px;
-        height: 150px;
-    }
 }
