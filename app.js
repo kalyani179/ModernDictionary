@@ -103,21 +103,39 @@ app.post("/search-word/word", function(req, res) {
     res.redirect("/search-word/word-audio-interface");
 })
 app.get("/search-word/word-audio-interface", function(req, res) {
-    const apiKey = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+    if (!word) {
+        return res.render("find-failure", { word: word, detail: "Word not provided" });
+    }
     const urlAudio = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
+
     https.get(urlAudio, function(response) {
-        if (response.statusCode == 200) {
-            response.on("data", function(data) {
-                const wordData = JSON.parse(data);
-                // const audioUrl = wordData[0].phonetics[0].text;
-                res.render("words/word-audio-interface", { word: word });
-            });
-        } else {
-            // res.render("words/word-audio-interface", { word: word });
-            res.render("find-failure", { word: word, detail: "Details" });
-        }
+        let data = '';
+
+        response.on('data', chunk => {
+            data += chunk;
+        });
+
+        response.on('end', () => {
+            console.log(data); // Log the data for debugging
+
+            if (response.statusCode === 200) {
+                try {
+                    const wordData = JSON.parse(data);
+                    res.render("words/word-audio-interface", { word: word, wordData: wordData });
+                } catch (e) {
+                    console.error("JSON parse error: ", e);
+                    res.render("find-failure", { word: word, detail: "JSON parse error" });
+                }
+            } else {
+                res.render("find-failure", { word: word, detail: "API request failed" });
+            }
+        });
+    }).on('error', (e) => {
+        console.error("API request error: ", e);
+        res.render("find-failure", { word: word, detail: "API request failed" });
     });
-})
+});
+
 app.get("/search-word/word-definitions", function(req, res) {
     let wordDefinitions = [];
     let wordPartOfSpeech = [];
@@ -217,36 +235,79 @@ app.get("/search-word/word-related-words", function(req, res) {
 
 app.get("/random-word", function(req, res) {
     const apiKey = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
-    const url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=1&minLength=5&api_key=" + apiKey;
-    https.get(url, function(response) {
-        response.on("data", function(data) {
-            const wordData = JSON.parse(data);
-            word = wordData.word;
-        });
-        res.redirect("/random-word-find");
+    const url = "https://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=true&includePartOfSpeech=noun,adjective,verb,adverb,interjection,pronoun,preposition,abbreviation,affix,article&minLength=5&api_key=" + apiKey;
 
+    https.get(url, function(response) {
+        let data = '';
+
+        response.on("data", function(chunk) {
+            data += chunk;
+        });
+
+        response.on("end", function() {
+            console.log("Response status code for random word:", response.statusCode);
+            console.log("Response data for random word:", data);
+            
+            if (response.statusCode === 200) {
+                try {
+                    const wordData = JSON.parse(data);
+                    word = wordData.word;
+                    res.redirect("/random-word-find");
+                } catch (e) {
+                    console.error("JSON parse error: ", e);
+                    res.redirect("/find-failure-random");
+                }
+            } else {
+                res.redirect("/find-failure-random");
+            }
+        });
+    }).on('error', function(e) {
+        console.error("API request error: ", e);
+        res.redirect("/find-failure-random");
     });
 });
-app.get("/random-word-find", function(req, res) {
-    const apiKey = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
-    const urlAudio = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
-    https.get(urlAudio, function(response) {
-        if (response.statusCode == 200) {
-            response.on("data", function(data) {
-                const wordData = JSON.parse(data);
-                // const audioUrl = wordData[0].phonetics[0].text;
-                if (word) res.render("words/word-audio-interface", { word: word });
-                else {
-                    res.render("find-failure-random", { word: word })
-                }
-            });
-        } else {
-            res.render("find-failure-random", { word: word });
-            // res.render("words/word-audio-interface", { word: word });
 
-        }
+app.get("/find-failure-random", function(req, res) {
+    res.render("find-failure-random", { word: word });
+});
+
+app.get("/random-word-find", function(req, res) {
+    if (!word) {
+        return res.render("find-failure-random", { word: word });
+    }
+    const urlAudio = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
+    
+    https.get(urlAudio, function(response) {
+        let data = '';
+
+        response.on("data", function(chunk) {
+            data += chunk;
+        });
+
+        response.on("end", function() {
+            if (response.statusCode === 200) {
+                try {
+                    const wordData = JSON.parse(data);
+                    // Check if the word data is valid
+                    if (wordData && wordData[0] && wordData[0].phonetics) {
+                        res.render("words/word-audio-interface", { word: word });
+                    } else {
+                        res.render("find-failure-random", { word: word });
+                    }
+                } catch (e) {
+                    console.error("JSON parse error: ", e);
+                    res.render("find-failure-random", { word: word });
+                }
+            } else {
+                res.render("find-failure-random", { word: word });
+            }
+        });
+    }).on('error', function(e) {
+        console.error("API request error: ", e);
+        res.render("find-failure-random", { word: word });
     });
-})
+});
+
 app.get("/show-all-words", function(req, res) {
     res.render("words/show-all-words");
 });
