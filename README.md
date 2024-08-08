@@ -2,7 +2,7 @@
 
 **Technologies Used:** HTML, CSS, Bootstrap, Express.js, EJS, API, MongoDB  
 
-**Visit the platform:** <a href="http://moderndictionary.onrender.com" target="_blank">moderndictionary.onrender.com</a> 🌐
+**Visit the website:** <a href="http://moderndictionary.onrender.com" target="_blank">moderndictionary.onrender.com</a> 🌐
 
 Modern Dictionary is a user-friendly web application designed to help users enhance their English language skills, including vocabulary and grammar. 📚✨ The app offers a range of features to support a comprehensive learning experience.
 
